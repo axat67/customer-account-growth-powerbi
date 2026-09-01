@@ -1,35 +1,28 @@
-# customer-account-growth-powerbi
-Customer Account Growth Dashboard built in Microsoft Power BI to analyze account acquisition, revenue growth, retention, and customer value.
-# Customer Account Growth Dashboard
-
-![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)
-![Excel](https://img.shields.io/badge/Data-Excel-green)
-![DAX](https://img.shields.io/badge/Analysis-DAX-blue)
+# Customer Account Growth & Revenue Analysis
 
 ## Project Overview
 
-The Customer Account Growth Dashboard is a Microsoft Power BI business intelligence project designed to analyze customer account growth, revenue performance, customer acquisition, retention, and segment-level performance.
+The Customer Account Growth Dashboard is a Microsoft Power BI business intelligence project designed to analyze customer acquisition, account growth, revenue performance, customer retention, and customer segment performance.
 
-The dashboard transforms CRM and sales data into an interactive management dashboard that helps identify revenue trends, customer growth patterns, and high-performing customer segments.
+The dashboard transforms CRM and sales data into an interactive analytical report that helps identify customer growth patterns, revenue trends, and high-performing customer segments.
 
 ---
 
 ## Business Objective
 
-The objective of this project is to understand how the customer base is growing and how that growth contributes to overall revenue.
-
-The dashboard is designed to answer the following business questions:
+The project aims to answer key customer growth and revenue questions:
 
 - How many customer accounts do we have?
 - How many new accounts are being acquired?
 - How much revenue are customers generating?
-- What is the average revenue generated per account?
+- What is the average revenue per account?
 - How is revenue changing over time?
 - Which account sizes generate the most revenue?
 - Which industries generate the most revenue?
-- How many customers are being retained?
-- Is customer revenue growing or declining?
+- How are new accounts distributed across industries?
+- Are customer accounts being retained?
 - Which customer segments represent the strongest opportunities?
+- Is customer engagement associated with revenue performance?
 
 ---
 
@@ -39,57 +32,52 @@ The dashboard is designed to answer the following business questions:
 - DAX
 - Power Query
 - Microsoft Excel
-- AI
 
 ---
 
 ## Dataset
 
-The project uses a CRM-style dataset containing customer account and deal information.
+The project uses a CRM-style dataset containing customer account, deal, and activity information.
 
-The data includes information such as:
+The dataset includes fields related to:
 
-- Account information
+- Customer accounts
 - Company size
 - Industry
 - Country
-- Deal information
-- Deal stage
-- Deal amount
-- Deal close date
+- Deals
+- Deal stages
+- Deal amounts
+- Deal close dates
 - Customer activities
 
-The dataset was transformed and modeled in Power BI using Power Query and DAX.
+The data was cleaned and transformed using Power Query and modeled in Power BI for analysis.
 
 ---
 
 ## Data Model
 
-The Power BI model uses a dimensional structure consisting primarily of:
+The Power BI model primarily consists of:
 
 ### Dim_Accounts
 
-Contains customer/account-level information.
+Contains customer-level information such as:
 
-Key fields include:
-
-- AccountID
-- AccountName
-- CompanySize
+- Account ID
+- Account Name
+- Company Size
 - Industry
 - Country
 
 ### Fact_Deals
 
-Contains deal-level transactional information.
+Contains deal-level information such as:
 
-Key fields include:
-
-- DealID
-- AccountID
-- DealAmount
-- DealStage
-- CloseDate
+- Deal ID
+- Account ID
+- Deal Amount
+- Deal Stage
+- Close Date
 
 ### Dim_Calendar
 
@@ -100,7 +88,7 @@ Key fields include:
 - Date
 - Year
 - Month
-- MonthName
+- Month Name
 - YearMonth
 - YearMonth Sort
 
@@ -112,77 +100,55 @@ Key fields include:
 |---|---:|
 | Total Accounts | 300 |
 | New Accounts | 235 |
-| Total Revenue | 5.54M |
-| Revenue per Account | 18.46K |
+| Total Revenue | ₹5.54M |
+| Revenue per Account | ₹18.46K |
 | Latest Month Retention | 0.00% |
 | Latest Month Revenue Growth | -76.21% |
 
-> KPI values are based on the current dataset and dashboard configuration.
+---
+
+# Dashboard Overview
+
+![Customer Account Growth Dashboard](dashboard-overview.jpg)
+
+The overview page provides an executive-level summary of customer growth and revenue performance.
+
+### Main KPIs
+
+- Total Revenue
+- Revenue per Account
+- New Accounts
+- Total Accounts
+- Customer Retention
+- Revenue Growth
+
+### Core Visuals
+
+- Revenue by Account Size
+- Revenue by Industry
+- Monthly Revenue Trend
+- New Accounts Trend
 
 ---
 
-## Dashboard
+### Analytical Visuals
 
-### Dashboard Overview
-
-![Customer Account Growth Dashboard](Screenshots/dashboard-overview.png)
-
----
-
-## Dashboard Analysis
-
-### 1. Revenue by Account Size
-
-Shows total revenue generated by different customer/company size categories:
-
-- Small
-- Medium
-- Enterprise
-
-This helps identify which customer segments contribute the most revenue.
-
-### 2. Revenue by Industry
-
-Compares revenue contribution across industries and highlights the strongest revenue-generating sectors.
-
-### 3. Monthly Revenue Trend
-
-Tracks monthly revenue performance over time from January 2025 through October 2026.
-
-This helps identify:
-
-- Revenue peaks
-- Revenue declines
-- Seasonal or monthly fluctuations
-- Recent revenue performance
-
-### 4. New Accounts Trend
-
-Tracks customer acquisition over time and shows how the number of new accounts changes across the reporting period.
-
-### 5. Customer Retention
-
-Measures month-over-month customer retention based on accounts with Won deals appearing in consecutive months.
-
-### 6. Revenue Growth
-
-Measures the change in revenue between the latest available month and the preceding month.
-
-### 7. Revenue per Account
-
-Measures the average revenue generated per customer account.
+- New Accounts by Industry
+- Revenue Growth by Account Size
+- Revenue per Account by Industry
+- Customer Engagement vs Revenue
+- Monthly Revenue Trend
+- New Account Growth Trend
 
 ---
 
 ## Interactive Filters
 
-The dashboard includes filters that allow users to analyze performance by:
+The dashboard allows users to analyze customer performance using:
 
 - Year
 - Industry
 - Company Size
-
-These filters allow the dashboard to be explored from different customer segment perspectives.
 
 ---
 
@@ -192,49 +158,51 @@ Based on the current dashboard:
 
 - The customer base contains 300 accounts.
 - 235 accounts are classified as new accounts.
-- Total revenue from Won deals is approximately 5.54M.
-- Revenue per account is approximately 18.46K.
-- Small accounts currently contribute the largest share of revenue among the account-size categories.
-- Retail currently represents the largest revenue-generating industry.
-- Revenue has experienced significant month-to-month fluctuations.
-- The latest month's revenue is significantly lower than the previous month.
-- Latest-month customer retention is currently 0%, based on the defined month-over-month retention methodology.
+- Total revenue is approximately ₹5.54M.
+- Revenue per account is approximately ₹18.46K.
+- Small accounts contribute the largest share of revenue by account size.
+- Retail currently generates the highest revenue among the analyzed industries.
+- New account acquisition varies considerably across industries and over time.
+- Revenue shows significant month-to-month fluctuations.
+- The latest month shows a substantial decline in revenue compared with the previous month.
+- Latest-month retention is currently 0% based on the defined month-over-month retention methodology.
 
 ---
 
 ## Business Recommendations
 
-Based on the dashboard analysis, management could:
+### Investigate the latest revenue decline
 
-### 1. Investigate the latest revenue decline
-
-The significant decline in latest-month revenue should be investigated to determine whether it is caused by:
+The significant decline in latest-month revenue should be investigated to determine whether it is driven by:
 
 - Fewer Won deals
-- Lower deal values
-- Changes in customer activity
-- Reduced performance in specific industries or account segments
+- Lower average deal values
+- Reduced customer activity
+- Weak performance in specific industries
+- Changes in account-size performance
 
-### 2. Focus on high-performing industries
+### Focus on high-performing industries
 
-Industries generating the highest revenue can be analyzed further to identify opportunities for:
+Industries generating the highest revenue can be investigated for:
 
 - Customer acquisition
 - Upselling
 - Cross-selling
 - Account expansion
 
-### 3. Analyze account-size performance
+### Analyze account-size performance
 
-Small accounts currently contribute substantial revenue. Management should investigate whether these customers represent an opportunity for systematic upselling into larger account relationships.
+Small accounts currently contribute a significant share of revenue. Their behavior can be analyzed to determine whether they represent opportunities for upselling and account expansion.
 
-### 4. Improve customer retention
+### Improve customer retention
 
-The current latest-month retention result indicates that customer continuity requires attention. Further analysis should identify which accounts are at risk of disengagement.
+The current retention result indicates that customer continuity requires further investigation.
+
+Accounts showing declining activity or revenue can be prioritized for engagement and retention efforts.
 
 ---
 
-## DAX & Power BI Techniques Used
+## DAX & Power BI Techniques
 
 The project uses DAX measures for:
 
@@ -245,34 +213,59 @@ The project uses DAX measures for:
 - Revenue Growth
 - Customer Retention
 
-Power BI techniques used include:
+Power BI techniques demonstrated include:
 
 - Data modeling
 - Relationships
 - Calculated columns
 - Measures
 - Time intelligence
-- Sorting by custom date columns
+- Custom date sorting
 - Interactive slicers
 - KPI cards
 - Trend analysis
-- Segment analysis
+- Customer segmentation
+- Revenue analysis
+- Scatter plot analysis
 
 ---
 
-## Project Structure
+## Skills Demonstrated
 
-```text
-customer-account-growth-dashboard/
-│
-├── Dashboard/
-│   └── Customer_Account_Growth_Dashboard.pbix
-│
-├── Screenshots/
-│   ├── dashboard-overview.png
-│   └── dashboard-detailed.png
-│
-├── Data/
-│   └── CRM_PowerBI_Master_Dataset.xlsx
-│
-└── README.md
+- Business Intelligence
+- Data Analysis
+- Power BI
+- DAX
+- Power Query
+- Data Modeling
+- Customer Analytics
+- Revenue Analysis
+- Customer Retention Analysis
+- Dashboard Design
+- Data Visualization
+- Business Insights
+
+---
+
+## Files
+
+### Power BI Dashboard
+
+`Customer Growth Dashboard.pbix`
+
+### Dashboard Screenshots
+
+`dashboard-overview.jpg`
+
+
+### Dataset
+
+`CRM_PowerBI_Master_Dataset(5).xlsx`
+
+---
+
+## Disclaimer
+
+This project is intended for educational and portfolio purposes.
+
+The dataset is a CRM-style analytical dataset and does not represent confidential company data.
